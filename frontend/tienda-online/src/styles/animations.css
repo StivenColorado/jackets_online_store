@@ -1,0 +1,7 @@
+@keyframes twinkle{
+    from{
+        color:black
+    }to{
+        color: white;
+    }
+}
