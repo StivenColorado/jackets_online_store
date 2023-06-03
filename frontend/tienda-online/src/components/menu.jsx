@@ -1,4 +1,5 @@
 import '../styles/nav.css'
+
 export const Menu = () => {
     return(
         <nav>
