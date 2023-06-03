@@ -1,15 +1,13 @@
 import './styles/app.css'
-import './js/animaciones.js';
 import './styles/animations.css'
+import  Menu  from './components/menu'
+import  Slider  from './components/slider'
 
-import { Menu } from './components/menu'
 function App() {
   return (
     <div className="App">
       <Menu></Menu>
-      <div className='gif-container'>
-
-      </div>
+      <Slider/>
     </div>
   );
 }
