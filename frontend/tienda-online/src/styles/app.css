@@ -21,6 +21,7 @@
 }
 
 .gif-container {
+  position: relative;
   width: 80%;
   height: 80%;
   background-color: rgba(80, 174, 211, 0.719);
