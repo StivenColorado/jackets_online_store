@@ -7,9 +7,9 @@ import slider3 from '../assets/slider/slider3.png';
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
-    { id: 1, title: 'Slide 1', image: slider1 },
-    { id: 2, title: 'Slide 2', image: slider2 },
-    { id: 3, title: 'Slide 3', image: slider3 }
+    { id: 1, title: 'title image 1', image: slider1 },
+    { id: 2, title: 'title image 2', image: slider2 },
+    { id: 3, title: 'title image 3', image: slider3 }
   ];
 
   useEffect(() => {
