@@ -1,0 +1,136 @@
+@keyframes modal1_text {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes rotate_no_image {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes show_modal_config {
+    from {
+        top: 10%;
+        opacity: 0;
+        z-index: -1;
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+        z-index: 11;
+    }
+}
+
+@keyframes hidden_modal_config {
+    from {
+        top: 0;
+        opacity: 1;
+        z-index: 11;
+    }
+    to {
+        top: 10%;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+
+/*modal agregar al carrito*/
+@keyframes show_modal_add_cart {
+    from {
+        top: 8%;
+        opacity: 0;
+        z-index: -1;
+    }
+
+    to {
+        top: 0%;
+        opacity: 1;
+        z-index: 2;
+    }
+}
+@keyframes hidden_modal_add_cart {
+    from {
+        top: 0%;
+        opacity: 1;
+        z-index: 2;
+    }
+    to {
+        top: 8%;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+/*modal administrar productos*/
+@keyframes show_modal_productos {
+    from {
+        top: 5%;
+        opacity: 0;
+        z-index: -1;
+    }
+
+    to {
+        top: 0%;
+        opacity: 1;
+        z-index: 20;
+    }
+}
+@keyframes hidden_modal_productos {
+    from {
+        top: 0%;
+        opacity: 1;
+        z-index: 20;
+    }
+    to {
+        top: 5%;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+/*modal administrar productos*/
+@keyframes show_modal_productos_carrito {
+    from {
+        /* top: 5%; */
+        opacity: 0;
+        z-index: -1;
+    }
+
+    to {
+        /* top: 0%; */
+        opacity: 1;
+        z-index: 20;
+    }
+}
+@keyframes hidden_modal_productos_carrito {
+    from {
+        /* top: 0%; */
+        opacity: 1;
+        z-index: 20;
+    }
+    to {
+        /* top: 5%; */
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+
+@keyframes efecto_subir_boton {
+    from{
+        top: 0;
+    }to{
+        top: -2%;
+    }
+}

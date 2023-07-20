@@ -1,0 +1,64 @@
+.register{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: row;
+    padding: 5%;
+    width: 60%;
+    height: 60vh;
+    border-radius: 1rem;
+    border:solid 1px black;
+    font-family: caveat;
+    overflow: hidden;
+}
+.formulario{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.formulario > label{
+    font-size: 1.3em;
+}
+.formulario > input{
+    width: 80%;
+    height: 8%;
+    outline: none;
+    border: none;
+    padding-left: 2%;
+    border-bottom: solid 1px black;
+    font-family: caveat;
+    font-size: 1.2em;
+}
+.text_form{
+    width: 50%;
+    height: 10%;
+}
+.text_form > a{
+    color: black;
+}
+.text_form > a:hover{
+    color: blue;
+}
+.formulario > button{
+    width: 35%;
+    height: 10%;
+    border-radius: .4rem;
+    font-family: caveat;
+    cursor: pointer;
+    outline: none;
+    border:solid 1px rgb(3, 3, 3);
+}
+.contenedor-deslizador{
+    width: 50%;
+    height: 100%;
+    background-color: transparent;
+    background-image: url('../assets/img/jacket.jpg');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: .3rem;
+    object-fit: contain;
+}

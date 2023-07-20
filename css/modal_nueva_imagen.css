@@ -1,0 +1,76 @@
+/*aqui se abre el modal para cambiar/actualizar la imagen del perfil*/
+.contenedor_formulario_nueva_imagen{
+    position: fixed;
+    width:100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column  ;
+    background-color: rgba(0, 0, 0, 0.623);
+    z-index: 18;
+    font-family: 'caveat';
+    display: none;
+}
+.close_contenedor_formulario_nueva_imagen{
+    position: absolute;
+    right: 59.5%;
+    top: 5%;
+    width: 5%;
+    height: 8%;
+    background-image: url('../assets/icons/close.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    z-index: 22;
+    cursor: pointer;
+}
+.contenedor_formulario_nueva_imagen > input{
+    width: 20%;
+    height: 80%;
+    background-color: pink;
+}
+.contenedor-boton-subir {
+    width: 20%;
+    height: 90%;
+    position: relative;
+    left: -20%;
+    overflow: hidden;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    flex-direction: column;
+    border-radius: .4rem;
+}
+.boton-subir {
+   width: 61%;
+   height: 8%;
+   background-color: pink;
+   border: none;
+   border-radius: .4rem;
+   font-family: 'caveat';
+   font-size: 1.5em;
+}
+
+.contenedor-boton-subir input[type=file] {
+    color: gray;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 90%;
+    height: 50%;
+    clip-path: circle();
+    cursor: pointer;
+    background-position: center;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    color: transparent;
+    font-size: 0;
+}
+
+.contenedor-boton-subir .imagen-archivo {
+    cursor: pointer;
+}

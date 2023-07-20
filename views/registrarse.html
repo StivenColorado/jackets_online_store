@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/animaciones.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/formulario_registrarse.css">
+    <link rel="shortcut icon" href="../assets/icons/favicon.png" type="image/x-icon">
+    <title>Registro - jacketStore</title>
+</head>
+
+<body>
+    <!--menu -->
+    <nav>
+        <div class="logo"></div>
+        <ul>
+            <li class="options option_active">HOME</li>
+            <li class="options">SHOP</li>
+            <li class="options">POPULAR</li>
+            <li class="options">CATEGORIES</li>
+        </ul>
+        <div class="container-button">
+            <button class="trolley"></button>
+            <!--<button class="profile"></button>-->
+        </div>
+    </nav>
+    <!--formulario iniciar sesion-->
+    <form class="register" id="register" method="post">
+        <div class="formulario">
+            <Label for="input_nombre">Nombre</Label>
+            <input type="text" name="nombre" id="input_nombre" required placeholder="user name">
+
+            <Label for="input_correo">Correo</Label>
+            <input type="email" name="correo" id="input_correo" required placeholder="user email">
+
+            <Label for="input_contrasena">Contraseña</Label>
+            <input type="password" name="contrasena" id="input_contrasena" required placeholder="**************">
+            <div class="text_form">
+                <a href="./iniciar_sesion.html">ya tienes cuenta? inicia sesion..</a>
+            </div>
+            <button class="btn_form registrarse" type="submit">Registrarse</button>
+        </div>
+        <div class="contenedor-deslizador">
+        </div>
+    </form>
+    <!--footer-->
+    <footer>
+        <p>© 2023, jacketStore@gmail.com </p>
+    </footer>
+    <script src="../controllers/submit_controller_register.js"></script>
+    <script src="../js/redireccionar.js"></script>
+</body>
+
+</html>
