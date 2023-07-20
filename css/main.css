@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+@font-face {
+    font-family: 'Rubik Iso';
+    src: url('../assets/fonts/RubikIso-Regular.ttf') format('TrueType');
+}
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../assets/fonts/Ubuntu-Regular.ttf') format('TrueType');
+}
+@font-face {
+    font-family: 'caveat';
+    src: url('../assets/fonts/CormorantGaramond-SemiBoldItalic.ttf') format('TrueType');
+}
+body{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}

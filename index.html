@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/icons/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="./css/model_editar_perfil.css">
+  <link rel="stylesheet" href="./css/menu_configuraciones.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/nav.css">
+  <link rel="stylesheet" href="./css/animaciones.css">
+  <link rel="stylesheet" href="./css/slider.css">
+  <link rel="stylesheet" href="./css/buscador.css">
+  <link rel="stylesheet" href="./css/panel.css">
+  <link rel="stylesheet" href="./css/articulo_producto.css">
+  <link rel="stylesheet" href="./css/modal_nueva_imagen.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/responsiveIndex.css">
+  <link rel="stylesheet" href="./css/modal_comprar_producto.css">
+  <link rel="stylesheet" href="./css/modal_administrar_productos.css">
+  <link rel="stylesheet" href="./css/modal_formulario_agregar_producto.css">
+  <link rel="stylesheet" href="./css/modal_carrito.css">
+  <title>Home - jacket Store</title>
+  <script src="./controllers/validar_sesion.js"></script>
+  <script src="./controllers/cargar_productos_usuarios.js"></script>
+</head>
+
+<body>
+  <!--ocultos-->
+  <div class="menu_configuraciones" id="menu_configuraciones">
+    <div class="cabecera_menu_configuraciones">
+      <button class="btn_cerrar_menu_configuraciones" id="btn_cerrar_menu_configuraciones"></button>
+    </div>
+    <div class="contenedor_perfil">
+      <div class="contenedor_imagen_perfil "></div>
+      <div class="contenedor_nombre_perfil" id="contenedor_nombre_perfil">
+      </div>
+      <small class="text_rol"></small>
+      <div class="contenedor_editar_perfil">
+        <div class="texto_editar_perfil">
+          Edit profile
+        </div>
+        <i class="icon_edit"></i>
+      </div>
+      <div class="contenedor_pedidos">
+        <div class="texto_pedidos">
+          Orders
+        </div>
+        <div class="cantidad_pedidos">0</div>
+      </div>
+    </div>
+  </div>
+
+  <!--aqui va a estar el modal para actualizar la imagen-->
+  <form class="contenedor_formulario_nueva_imagen">
+    <div class="close_contenedor_formulario_nueva_imagen"></div>
+    <div class="contenedor-boton-subir">
+      <h1>Update Image</h1>
+      <input type="file" name="imagen" id="imagen" required onchange="mostrarNombreArchivo()">
+      <button class="boton-subir imagen-archivo">Upload </button>
+    </div>
+  </form>
+
+  <!--aqui esta para modificar la informacion-->
+  <div class="model_editar_perfil">
+    <div class="header_modal_editar_perfil">
+      Edit profile
+    </div>
+    <div class="contenedor_formulario_modal">
+      <div class="close_formulario_editar_perfil"></div>
+      <div class="left_menu">
+        <div class="contenedor_imagen_modal">
+          <img class="imagen_profile">
+        </div>
+        <h1 class="texto_nombre_profile_modal">
+
+        </h1>
+        <ul class="menu_left_opciones">
+          <li class="opciones_left opcion_activa" id="opcion_perfil">My profile</li>
+          <li class="opciones_left" id="opcion_contrasena">Change Password</li>
+          <li class="opciones_left" id="opciones_left_cerrar_sesion">Sign off</li>
+        </ul>
+      </div>
+      <div class="rigth_menu">
+        <div class="sub_contenedor_rigth_menu">
+          <div class="cabecera_sub_contenedor_rigth_menu">
+            <div>
+              Profile
+            </div>
+            <div class="contenedor_progreso_perfil">
+            </div>
+          </div>
+          <form class="formulario_editar_perfil">
+            <div class="seccion_formulario_editar_perfil">
+              <label for="">Name</label>
+              <input type="text" name="nombre_editar_perfil" id="" required>
+            </div>
+            <div class="seccion_formulario_editar_perfil">
+              <label for="">Email</label>
+              <input type="email" name="correo_editar_perfil" id="" required disabled>
+            </div>
+            <div class="seccion_formulario_editar_perfil">
+              <label for="">Address</label>
+              <input type="" name="direccion_editar_perfil" id="" required>
+            </div>
+            <button class="btn_update_profile">Update</button>
+          </form>
+          <!--formulario actualizar contraseña-->
+          <form class="formulario_actualizar_contrasena">
+            <div class="seccion_formulario_actualizar_contrasena">
+              <label for="">Current Password</label>
+              <input type="password" name="contrasena_actual" required>
+            </div>
+            <div class="seccion_formulario_actualizar_contrasena">
+              <label for="">New Password</label>
+              <input type="password" name="contrasena_nueva" required>
+            </div>
+            <div class="seccion_formulario_actualizar_contrasena">
+              <label for="">Confirm New Password</label>
+              <input type="password" name="confirmar_contrasena_nueva" required>
+            </div>
+            <button class="btn_actualizar_contrasena">Update Password</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal_comprar_producto">
+    <div class="close_modal_add_cart">X</div>
+    <div class="contenedor_imagenes_producto">
+      <div class="contenedor_imagen_principal_producto"></div>
+      <div class="contenedor_imagenes_secundarias_producto">
+        <div class="sub_imagen_producto"></div>
+      </div>
+    </div>
+    <div class="contenedor_informacion_producto">
+      <h1 class="texto_nombre_producto">Chaqueta de cuero </h1>
+      <p class="texto_precio_producto">$ 120.000.0</p>
+      <form method="dialog" class="formulario_agregar_producto_carrito">
+        <label>Size</label>
+        <select name="size" class="select_talla_producto">
+          <option value="sexo">Small</option>
+          <option value="sexo">Medium</option>
+          <option value="sexo">Large</option>
+          <option value="sexo">X-Large</option>
+          <option value="sexo">2X-Large</option>
+          <option value="sexo">3X-Large</option>
+        </select>
+        <button class="boton_agregar_producto_carrito">
+          Add to car
+        </button>
+      </form>
+      <div class="descripcion_producto_agregar_carrito">
+        Este elegante saco es una verdadera declaración de estilo y sofisticación. Confeccionado con los mejores
+        materiales y una atención meticulosa a los detalles, este saco te garantiza una apariencia impecable en
+        cualquier ocasión.
+      </div>
+      <a href="#">See Size Chart</a>
+    </div>
+  </div>
+
+  <div class="modal_administrar_productos">
+    <header class="cabecera_buscar_productos">
+      <form class="buscar_producto_administrador">
+        <input type="text" name="texto_buscar_producto_administrador" placeholder="search any product"
+          class="texto_buscar_producto_administrador">
+        <button class="btn_buscar_producto_administrador">
+        </button>
+      </form>
+      <div class="btn_cerrar_modal_administrar_productos">
+        x
+      </div>
+    </header>
+    <header class="sub_navegacion_adminstrar_productos">
+      <div class="btn_add_new_product">
+        <i class="icon_add_new_product"></i>
+        <p class="texto_agregar_producto">
+          Agregar producto
+        </p>
+      </div>
+    </header>
+
+    <div class="panel_administrar_productos">
+    </div>
+  </div>
+
+  <form class="formulario_agregar_producto" enctype="multipart/form-data">
+    <div class="btn_cerrar_formulario_agregar_producto">X</div>
+    <label for="nombre_saco">Nombre del saco:</label>
+    <input type="text" id="nombre_saco" name="nombre_saco" required>
+
+    <label for="descripcion_saco">Descripción del saco:</label>
+    <textarea id="descripcion_saco" name="descripcion_saco" required></textarea>
+
+    <label for="precio_saco">Precio del saco:</label>
+    <input type="number" id="precio_saco" name="precio_saco" required>
+
+    <label for="cantidad">Cantidad:</label>
+    <input type="number" id="cantidad" name="cantidad" required>
+
+    <label for="imagenes">Imágenes (mínimo 1, máximo 3):</label>
+    <!--  <input  type="file" id="imagenes" name="imagenes[]" accept="image/*" multiple required> -->
+    <input class="styled-file-input" type="file" id="imagenes" name="imagenes[]" multiple>
+    <div id="previsualizacion"></div>
+
+    <input type="submit" value="Agregar Producto">
+  </form>
+
+  <div class="modal_carrito">
+    <header class="header_modal_carrito">
+      <h1>Carrito de compras</h1>
+      <div class="btn_close_modal_carrito">
+        x
+      </div>
+    </header>
+    <div class="grilla_carrito">
+      <table class="contenedor_productos_carritos">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Nombre</th>
+            <th>Precio Unitario</th>
+            <th>Cantidad</th>
+            <th>size</th>
+            <th class="campo_eliminar"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <img class="imagen_producto_carrito" src="./assets/img/chqueta5.png" alt="Producto 1">
+            </td>
+            <td>Producto 1</td>
+            <td>$10.00</td>
+            <td>
+              <input type="number" name="cantidad[]" value="1" min="1" class="input_cantidad_productos">
+            </td>
+            <td>small</td>
+            <td class="campo_eliminar">
+              <button class="eliminar_producto_carrito"></button>
+            </td>
+          </tr>
+
+         
+          <!-- Agrega más filas para cada producto en el carrito -->
+        </tbody>
+      </table>
+    </div>
+    <div class="total_carrito">
+      <p>Total: $XXX</p>
+      <button>Comprar</button>
+    </div>
+  </div>
+
+  <!--fin contenedores ocultos-->
+  <nav>
+    <div class="logo"></div>
+    <ul>
+      <li class="options option_active">HOME</li>
+      <li class="options">SHOP</li>
+      <li class="options">POPULAR</li>
+      <li class="options">CATEGORIES</li>
+    </ul>
+    <div class="container-button">
+      <button class="trolley"></button>
+      <!--<button class="profile"></button>-->
+    </div>
+  </nav>
+  <!--SLIDER-->
+  <div class="slider">
+    <div class="slider-container">
+      <!--
+            <img src="./assets//slider/slider1.png" alt="Imagen 1" class="slide">
+            <img src="./assets//slider/slider2.png" alt="Imagen 2" class="slide">
+            <img src="./assets//slider/slider3.png" alt="Imagen 3" class="slide">
+            -->
+      <img src="./assets//slider/slider4.png" alt="Imagen 3" class="slide">
+      <img src="./assets//slider/slider5 (2).jpg" alt="Imagen 3" class="slide">
+      <img src="./assets//slider/slider5.jpg" alt="Imagen 3" class="slide">
+      <img src="./assets//slider/slider6.jpg" alt="Imagen 3" class="slide">
+      <img src="./assets//slider/slider7.jpg" alt="Imagen 3" class="slide">
+      <img src="./assets//slider/slider8.jpg" alt="Imagen 3" class="slide">
+
+    </div>
+  </div>
+  <!--buscador-->
+  <form action="" method="dialog" class="buscador">
+    <input type="text" name="product_bame" class="input_product_name" required placeholder="search here">
+    <button class="btn_search"></button>
+  </form>
+  <div class="panel">
+    <!-- 
+      <article class="producto" data-id="1">
+      <img src="./assets/img/chqueta.png" alt="name" class="img_producto">
+      <div class="texto-producto">
+        <h1 class="nombre_producto">Chaqueta bomber acolchada</h1>
+        <p class="precio_producto">$ 220.000.0</p>
+      </div>
+    </article> 
+  -->
+  </div>
+  <footer>
+    <p>© 2023, jacketStore@gmail.com </p>
+  </footer>
+  <script src="./js/slider.js"></script>
+  <script src="./js/open_modal_new_image.js"></script>
+  <script src="./js/menu_opciones_perfil.js"></script>
+  <script src="./js/mostrar_informacion_perfil.js"></script>
+  <script src="./js/mostrar_modal_productos.js"></script>
+  <script src="./js/agregar_imagenes_formulario.js"></script>
+  <script src="./js/open_modal_add_product.js"></script>
+  <script src="./js/open_modal_carrito.js "></script>
+
+
+  <script src="./controllers/cerrar_sesion.js"></script>
+  <script src="./controllers/cargar_perfil.js"></script>
+  <script src="./controllers/actualizar_perfil.js"></script>
+  <script src="./controllers/actualizar_contrasena.js"></script>
+  <script src="./controllers/actualizar_imagen.js"></script>
+  <script src="./controllers/submit_controller_product.js"></script>
+  <script src="./controllers/cargar_productos_administrador.js"></script>
+  <script src="./controllers/eliminar_producto.js"></script>
+
+  <script src="./js/open_modal_add_item_cart.js"></script>
+
+
+
+</body>
+
+</html>

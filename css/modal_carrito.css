@@ -1,0 +1,137 @@
+.modal_carrito {
+    position: fixed;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index:22;
+    opacity: 1;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    background-color: white;
+}
+
+.header_modal_carrito {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header_modal_carrito>h1 {
+    font-family: 'caveat';
+    width: 20%;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.btn_close_modal_carrito {
+    width: 5%;
+    height: 100%;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.grilla_carrito {
+    width: 90%;
+    min-height: 80vh;
+    display: inline-block;
+    overflow: hidden;
+    overflow-y: auto;
+    /* Estilos del scroll */
+    scrollbar-width: thin;
+    scrollbar-color: transparent #dddddd;
+}
+
+.grilla_carrito::-webkit-scrollbar {
+    width: 8px;
+}
+
+.grilla_carrito::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.grilla_carrito::-webkit-scrollbar-thumb:hover {
+    background-color: transparent;
+}
+
+.grilla_carrito::-webkit-scrollbar-track {
+    background-color: #ffffff9a;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+}
+
+tr {
+    height: 14vh;
+    background-color: rgb(255, 255, 255);
+    color: rgb(170, 163, 163);
+}
+
+.total_carrito {
+    position: relative;
+    width: 85%;
+    height: 20vh;
+    border-top: solid 1px black;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.total_carrito>p {
+    width: 8%;
+}
+
+.total_carrito>button {
+    width: 10%;
+    height: 60%;
+    margin: 20px;
+    background-color: rgb(218, 54, 81);
+    border: none;
+    border-radius: .4rem;
+    color: white;
+}
+
+.imagen_producto_carrito {
+    width: 50%;
+    height: 5;
+    background-color: red;
+}
+
+td,
+th {
+    max-width: 20px;
+}
+
+.campo_eliminar {
+    max-width: 5px;
+}
+
+.eliminar_producto_carrito {
+    width: 100%;
+    height: 50px;
+    background-image: url('../assets/icons/icon_delete.png');
+    background-position: center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    border:solid transparent;
+    cursor: pointer;
+}
+
+.input_cantidad_productos{
+    border: none;
+    outline: none;
+    text-align: center;
+    width: 50%;
+    height: 40px;
+    border-radius: .5rem;
+}

@@ -1,0 +1,339 @@
+.model_editar_perfil {
+    position: fixed;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.712);
+    z-index: -1;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'caveat';
+    flex-direction: column;
+}
+
+.header_modal_editar_perfil {
+    position: relative;
+    width: 58%;
+    height: 8%;
+    background-color: rgb(207, 83, 104);
+    border-radius: .5rem .5rem 0 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2%;
+    font-size: 1.5em;
+    color: white;
+}
+
+.contenedor_formulario_modal {
+    width: 60%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    border-radius: 0 0 .5rem .5rem;
+}
+
+/*
+.contenedor-boton-subir {
+    position: absolute;
+    overflow: hidden;
+    left:21%;
+    top: 15%;
+    display: inline-block;
+    clip-path: circle();
+    object-fit: cover;
+    width: 15%;
+    height: 30%;
+    background-image: url('../assets/icons/no_image.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+}
+.nombre-archivo {
+    width: auto;
+    height: 10%;
+    position: relative;
+}
+.seccion_formulario_perfil {
+    min-width: 35%;
+    height: 20%;
+    background-color: pink;
+}
+.boton-subir {
+    border: 2px solid gray;
+    color: gray;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: rgba(255, 0, 0, 0.404);
+}
+.contenedor-boton-subir input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: purple;
+    opacity: 0;
+    z-index: 12;
+}
+.contenedor-boton-subir .imagen-archivo {
+    cursor: pointer;
+}*/
+
+.left_menu {
+    width: 40%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.menu_left_opciones {
+    width: 80%;
+    height: 40%;
+    overflow: hidden;
+}
+
+.menu_left_opciones>li {
+    width: 100%;
+    height: 25%;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.menu_left_opciones>li:hover {
+    background-color: pink;
+}
+
+.menu_left_opciones>li.opcion_activa::before {
+    content: "";
+    width: 5px;
+    height: 100%;
+    background-color: rgb(207, 83, 104);
+    margin-right: 5%;
+}
+
+.contenedor_imagen_modal {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+    width: 50%;
+    height: 30%;
+}
+
+.imagen_profile {
+    width: 70%;
+    height: 70%;
+    clip-path: circle();
+    object-fit: contain;
+    cursor: pointer;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.imagen_profile:hover {
+    content: "";
+    z-index: 15;
+}
+
+.texto_nombre_profile_modal {
+    position: relative;
+    width: 80%;
+    height: 10%;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.rigth_menu {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 60%;
+    height: 100%;
+}
+
+.sub_contenedor_rigth_menu {
+    width: 90%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cabecera_sub_contenedor_rigth_menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    font-weight: bold;
+    font-size: 2.5em;
+}
+
+.contenedor_progreso_perfil {
+    width: 30%;
+    height: 80%;
+    background-color: rgba(189, 37, 83, 0.623);
+    clip-path: circle();
+}
+
+/*estilos formulario dentro del modal de editar pefil*/
+.formulario_editar_perfil {
+    width: 78%;
+    height: 70%;
+    max-height: 70%;
+    overflow: hidden;
+    overflow-y:auto;
+    display: inline-block;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.seccion_formulario_editar_perfil {
+    width: 100%;
+    height: 25%;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.seccion_formulario_editar_perfil>label {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.4em;
+    color: rgba(187, 34, 80, 0.986);
+}
+
+.seccion_formulario_editar_perfil>input {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1em;
+    outline: none;
+    border-radius: .4em;
+    border: solid 1px rgb(192, 192, 192);
+    padding-left: 5%;
+}
+
+.formulario_editar_perfil>button {
+    width: 40%;
+    height: 12%;
+    font-size: 1.3em;
+    outline: none;
+    border-radius: .4em;
+    background-color: rgb(207, 83, 104);
+    border: none;
+    text-align: center;
+    color: white;
+    margin-top: 2%;
+}
+
+.formulario_editar_perfil>button:hover {
+    cursor: pointer;
+}
+
+.close_formulario_editar_perfil {
+    position: absolute;
+    width: 5%;
+    height: 10%;
+    top: 5%;
+    right: 20%;
+    background-image: url('../assets/icons/close.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    filter: invert(1);
+    cursor: pointer;
+}
+/*formulario actualizar contraseña*/
+.formulario_actualizar_contrasena{
+    width: 78%;
+    height: 70%;
+    max-height: 70%;
+    overflow: hidden;
+    overflow-y:auto;
+    display: inline-block;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: none;
+}
+.seccion_formulario_actualizar_contrasena {
+    width: 100%;
+    height: 25%;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.seccion_formulario_actualizar_contrasena>label {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.2em;
+    color: rgba(187, 34, 80, 0.986);
+}
+
+.seccion_formulario_actualizar_contrasena>input {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1em;
+    outline: none;
+    border-radius: .4em;
+    border: solid 1px rgb(192, 192, 192);
+    padding-left: 5%;
+}
+
+.formulario_actualizar_contrasena>button {
+    width: 40%;
+    height: 12%;
+    font-size: 1em;
+    outline: none;
+    border-radius: .4em;
+    background-color: rgb(207, 83, 104);
+    border: none;
+    text-align: center;
+    color: white;
+    margin-top: 2%;
+}
+
+.formulario_actualizar_contrasena>button:hover {
+    cursor: pointer;
+}
