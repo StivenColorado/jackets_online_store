@@ -30,8 +30,8 @@ window.onload = function () {
       price_text_modal.textContent = clickedPrice;
       title_text_modal.textContent = clickedTitle;
       btn_addt_item_cart.setAttribute('data-id',id); 
-      console.log(id)
-      console.log(btn_addt_item_cart)
+      // console.log(id)
+      // console.log(btn_addt_item_cart)
       modal_add_to_cart.style.animation = "show_modal_add_cart .2s alternate ease-in forwards";
     }
   })

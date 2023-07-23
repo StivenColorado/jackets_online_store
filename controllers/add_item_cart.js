@@ -10,6 +10,7 @@ document.querySelector('.boton_agregar_producto_carrito').addEventListener('clic
           alert('El producto ya está en el carrito.');
         } else {
           alert('Producto agregado al carrito exitosamente.');
+          location.reload();
         }
       })
       .catch(error => {

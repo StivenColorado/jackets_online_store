@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let precio_producto = document.createElement('p');
     precio_producto.className = 'precio_producto';
-    precio_producto.textContent = precio;
+    precio_producto.textContent = formatNumberWithDots(precio);
 
     texto_producto.appendChild(nombre_producto);
     texto_producto.appendChild(precio_producto);
