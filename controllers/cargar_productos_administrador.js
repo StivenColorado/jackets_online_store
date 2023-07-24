@@ -18,7 +18,7 @@ const crearSeccion = (imagen, nombre, precio, id) => {
 
   let contenedor_botones_administrador = document.createElement('div');
   contenedor_botones_administrador.className = 'contenedor_botones_administrador';
-  contenedor_botones_administrador.textContent = formatNumberWithDots(precio);
+  contenedor_botones_administrador.textContent = '$ ' +formatNumberWithDots(precio);
 
   let btn_admin = document.createElement('div');
   btn_admin.className = 'btn_admin';
@@ -58,7 +58,7 @@ fetch('./models/cargar_productos_administrador.php')
         const codigoSaco = producto.codigo_saco;
         const nombreSaco = producto.nombre_saco;
         const descripcionSaco = producto.descripcion_saco;
-        const precioSaco = formatNumberWithDots(producto.precio_saco);
+        const precioSaco = '$ ' +formatNumberWithDots(producto.precio_saco);
         const cantidad = producto.cantidad;
         const imagenes = producto.imagenes;
         crearSeccion(producto.imagenes[0], producto.nombre_saco, formatNumberWithDots(producto.precio_saco), producto.codigo_saco);
@@ -71,14 +71,6 @@ fetch('./models/cargar_productos_administrador.php')
       const precioSaco = formatNumberWithDots(data.precio_saco);
       const cantidad = data.cantidad;
       const imagenes = data.imagenes;
-      // Aquí puedes realizar las acciones necesarias con los datos del producto
-      // Por ejemplo, mostrarlos en la página o almacenarlos en variables para su uso posterior
-      // console.log(`Código del saco: ${codigoSaco}`);
-      // console.log(`Nombre del saco: ${nombreSaco}`);
-      // console.log(`Descripción del saco: ${descripcionSaco}`);
-      // console.log(`Precio del saco: ${precioSaco}`);
-      // console.log(`Cantidad: ${cantidad}`);
-      // console.log(`Imágenes: ${imagenes}`);
     }
   })
   .catch(error => {
