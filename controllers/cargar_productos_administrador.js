@@ -18,7 +18,7 @@ const crearSeccion = (imagen, nombre, precio, id) => {
 
   let contenedor_botones_administrador = document.createElement('div');
   contenedor_botones_administrador.className = 'contenedor_botones_administrador';
-  contenedor_botones_administrador.textContent = precio;
+  contenedor_botones_administrador.textContent = formatNumberWithDots(precio);
 
   let btn_admin = document.createElement('div');
   btn_admin.className = 'btn_admin';
@@ -58,17 +58,17 @@ fetch('./models/cargar_productos_administrador.php')
         const codigoSaco = producto.codigo_saco;
         const nombreSaco = producto.nombre_saco;
         const descripcionSaco = producto.descripcion_saco;
-        const precioSaco = producto.precio_saco;
+        const precioSaco = formatNumberWithDots(producto.precio_saco);
         const cantidad = producto.cantidad;
         const imagenes = producto.imagenes;
-        crearSeccion(producto.imagenes[0], producto.nombre_saco, producto.precio_saco, producto.codigo_saco);
+        crearSeccion(producto.imagenes[0], producto.nombre_saco, formatNumberWithDots(producto.precio_saco), producto.codigo_saco);
       });
     } else {
       // Aquí puedes utilizar los datos de data directamente si no es un array
       const codigoSaco = data.codigo_saco;
       const nombreSaco = data.nombre_saco;
       const descripcionSaco = data.descripcion_saco;
-      const precioSaco = data.precio_saco;
+      const precioSaco = formatNumberWithDots(data.precio_saco);
       const cantidad = data.cantidad;
       const imagenes = data.imagenes;
       // Aquí puedes realizar las acciones necesarias con los datos del producto
@@ -84,3 +84,7 @@ fetch('./models/cargar_productos_administrador.php')
   .catch(error => {
     console.log('Error:', error);
   });
+
+  function formatNumberWithDots(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
