@@ -29,6 +29,7 @@ function cargarProductosCarrito() {
         // Recorriendo los productos y agregándolos a la tabla
         data.forEach(producto => {
           // Crear la fila de la tabla con los datos del producto
+         
           const filaHTML = `
             <tr>
               <td>
@@ -37,11 +38,11 @@ function cargarProductosCarrito() {
               <td>${producto.nombre}</td>
               <td>$${formatNumberWithDots(producto.precio)}</td>
               <td>
-                <input type="number" name="cantidad[]" value="${producto.cantidad-producto.cantidad+1}" min="1" max="${producto.cantidad}" class="input_cantidad_productos">
+                <input type="number" name="cantidad[]" value="${producto.cantidad - producto.cantidad + 1}" min="1" max="${producto.cantidad}" class="input_cantidad_productos">
               </td>
               <td>${producto.tamano}</td>
               <td class="campo_eliminar">
-                <button class="eliminar_producto_carrito"></button>
+                <button data-id="${producto.id_saco}" class="eliminar_producto_carrito"></button>
               </td>
             </tr>
           `;
