@@ -25,5 +25,11 @@
     cursor: pointer;
 }
 .nombre_producto,.precio_producto{
-    padding-left: -2%;
+    position: relative;
+    padding-left: 10%;
+    font-size: 1em;
+    font-weight: bold;
+}
+.precio_producto{
+    color: green;
 }

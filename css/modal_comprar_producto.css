@@ -89,6 +89,9 @@
     height: 8%;
     font-size: 1.5em;
 }
+.texto_precio_producto{
+    color: green;
+}
 .texto_precio_producto, .formulario_agregar_producto_carrito > label{
     font-size: 1.3em;
 }
