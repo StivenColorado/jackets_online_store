@@ -1,4 +1,4 @@
-const text_price = document.querySelector('.total_carrito > p');
+let text_price = document.querySelector('.total_carrito > p');
 const text_cart = document.querySelector('.header_modal_carrito > h1');
 const trolleyElement = document.querySelector('.trolley');
 
@@ -29,14 +29,13 @@ function cargarProductosCarrito() {
         // Recorriendo los productos y agregándolos a la tabla
         data.forEach(producto => {
           // Crear la fila de la tabla con los datos del producto
-         
           const filaHTML = `
             <tr>
               <td>
                 <img class="imagen_producto_carrito" src="${producto.ruta_imagen}" alt="${producto.nombre}">
               </td>
               <td>${producto.nombre}</td>
-              <td>$${formatNumberWithDots(producto.precio)}</td>
+              <td class="precio_seccion_producto" data-precio="${producto.precio}">$${formatNumberWithDots(producto.precio)}</td>
               <td>
                 <input type="number" name="cantidad[]" value="${producto.cantidad - producto.cantidad + 1}" min="1" max="${producto.cantidad}" class="input_cantidad_productos">
               </td>
@@ -54,6 +53,12 @@ function cargarProductosCarrito() {
           // Agregar la fila a la tabla
           tbody.insertAdjacentHTML('beforeend', filaHTML);
         });
+
+        // Agregar el evento onchange a los elementos de entrada (input) con la clase 'input_cantidad_productos'
+        const inputCantidadProductos = document.querySelectorAll('.input_cantidad_productos');
+        inputCantidadProductos.forEach(input => {
+          input.addEventListener('change', recalcularTotal);
+        });
       }
     })
     .catch(error => {
@@ -64,6 +69,22 @@ function cargarProductosCarrito() {
 // Función para formatear el número con puntos cada tres dígitos
 function formatNumberWithDots(number) {
   return number.toLocaleString();
+}
+
+function recalcularTotal() {
+  const inputCantidadProductos = document.querySelectorAll('.input_cantidad_productos');
+  let total = 0;
+
+  inputCantidadProductos.forEach(input => {
+    const cantidad = parseInt(input.value);
+    const precioElement = input.closest('tr').querySelector('.precio_seccion_producto');
+    if (precioElement) {
+      const precio = parseFloat(precioElement.getAttribute('data-precio'));
+      total += cantidad * precio;
+    }
+  });
+
+  text_price.textContent = '$ ' + formatNumberWithDots(total);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
