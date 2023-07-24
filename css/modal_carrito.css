@@ -101,9 +101,9 @@ tr {
 }
 
 .imagen_producto_carrito {
-    width: 50%;
-    height: 5;
+    width: 35%;
     background-color: red;
+    object-fit: contain;
 }
 
 td,
