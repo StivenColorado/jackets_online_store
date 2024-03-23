@@ -4,13 +4,13 @@ const abrirMenu = (btn) => {
     if (icon_no_image) {
         icon_no_image.style.animation = "rotate_no_image .3s alternate ease-in backwards"
     }
-    menu.style.width = "25%";
+    // menu.style.width = "25%";
     menu.style.right = "0%";
 }
 const cerrarMenu = (btn) => {
     const menu = document.querySelector('#menu_configuraciones'); // Utiliza el selector de ID (#) para seleccionar el elemento con el ID "menu_configuraciones"
     const icon_no_image = document.querySelector('.sin_imagen')
-    menu.style.width = "25%";
+    // menu.style.width = "25%";
     menu.style.right = "-100%";
     if (icon_no_image) {
         icon_no_image.style.animation = ""
@@ -32,7 +32,7 @@ const btn_close_edit_profile = document.querySelector('.close_formulario_editar_
 const open_modal_close_menu = () => {
     const menu = document.querySelector('#menu_configuraciones'); // Utiliza el selector de ID (#) para seleccionar el elemento con el ID "menu_configuraciones"
     const icon_no_image = document.querySelector('.sin_imagen')
-    menu.style.width = "25%";
+    // menu.style.width = "25%";
     menu.style.right = "-100%";
     if (icon_no_image) {
         icon_no_image.style.animation = ""
