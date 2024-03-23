@@ -205,7 +205,7 @@
     height: 70%;
     max-height: 70%;
     overflow: hidden;
-    overflow-y:auto;
+    overflow-y: auto;
     display: inline-block;
     flex-direction: column;
     justify-content: flex-start;
@@ -275,19 +275,21 @@
     filter: invert(1);
     cursor: pointer;
 }
+
 /*formulario actualizar contraseña*/
-.formulario_actualizar_contrasena{
+.formulario_actualizar_contrasena {
     width: 78%;
     height: 70%;
     max-height: 70%;
     overflow: hidden;
-    overflow-y:auto;
+    overflow-y: auto;
     display: inline-block;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     display: none;
 }
+
 .seccion_formulario_actualizar_contrasena {
     width: 100%;
     height: 25%;
@@ -336,4 +338,95 @@
 
 .formulario_actualizar_contrasena>button:hover {
     cursor: pointer;
+}
+
+
+/* responsive editar perfil */
+@media (max-width:900px) {
+    .header_modal_editar_perfil {
+        width: 100%;
+
+    }
+
+    .contenedor_formulario_modal {
+        width: 100%;
+    }
+}
+
+@media (max-width:900px) {
+    .contenedor_formulario_modal {
+        height: 91%;
+    }
+
+    .contenedor_formulario_modal {
+        flex-direction: column;
+    }
+
+    .imagen_profile {
+        height: 20vh;
+    }
+
+    .left_menu {
+        width: 100%;
+        height: 40%;
+    }
+
+    .menu_left_opciones {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .texto_nombre_profile_modal {
+        text-align: center;
+        margin-top: 2em;
+    }
+
+    .imagen_profile {
+        position: relative;
+        width: 70%;
+        height: 19vh;
+        clip-path: circle();
+        object-fit: contain;
+        cursor: pointer;
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .menu_left_opciones{
+
+        width: 100%;
+    }
+    .menu_left_opciones>li {
+        justify-content: center;
+    }
+
+    /* estilos menu derecho */
+    .rigth_menu {
+        width: 100%;
+        height: auto;
+        min-height: 68%;
+    }
+    .formulario_editar_perfil{
+        height: 100vh;
+        width: 80%;
+        max-height: none;
+    }
+    .close_formulario_editar_perfil{
+    position: absolute;
+    width: 6vw;
+    height: 10vh;
+    top: 0;
+    right: 0;
+    background-image: url(../assets/icons/close.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    filter: invert(1);
+    cursor: pointer;
+    z-index: 40;
+    /* background: red; */
+    background-size: 100%;
+    }
 }
