@@ -1,31 +1,109 @@
+@media (max-width:856px) {
+    .container-button {
+        width: 15%;
+    }
+
+}
+
+/* responsive menu de configuraciones */
+@media (max-width:930px) {
+    .menu_configuraciones {
+        width: 40vw;
+    }
+}
+
+@media (max-width:860px) {
+    .buscador {
+        height: 2.8em;
+    }
+
+    .input_product_name {
+        width: 50%;
+    }
+
+    .btn_search {
+        height: 100%;
+        width: 7%;
+    }
+
+}
+
+
 @media (max-width:750px) {
+    .menu_configuraciones {
+        width: 50vw;
+    }
+
     .container-button>button {
         background-size: 75%;
     }
 
-    .profile {
-        display: none;
+    .trolley::before {
+        width: 2em;
     }
 
+    .title_nav {
+        transform: translateX(3em);
+    }
     .panel {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* aqui va el responsive del modal de detalles de saco */
+}
+
+@media (max-width:500px) {
+    .trolley::before {
+        transform: translateY(.4em);
+        padding: .4em;
+    }
+
+    .menu_configuraciones {
+        width: 70vw;
     }
 }
 
 @media (max-width:660px) {
-    nav{
+    nav {
         justify-content: space-between;
     }
+
     nav ul {
         display: none;
     }
+
     .logo {
         width: 10%;
     }
+
     .container-button>button {
         background-size: 80%;
     }
+
     .trolley::before {
         width: 2.5%;
+    }
+}
+
+@media (max-width:480px) {
+
+    .input_product_name {
+        width: 70%;
+    }
+
+    .btn_search {
+        height: 100%;
+        width: 15%;
+    }
+
+}
+
+@media (max-width:400px) {
+    .container-button {
+        width: 20%;
+    }
+
+    .menu_configuraciones {
+        width: 90vw;
     }
 }
