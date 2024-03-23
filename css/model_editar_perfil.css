@@ -413,7 +413,20 @@
         width: 80%;
         max-height: none;
     }
-    .seccion_formulario_editar_perfil>input{
+    .close_formulario_editar_perfil{
+    position: absolute;
+    width: 6vw;
+    height: 10vh;
+    top: 0;
+    right: 0;
+    background-image: url(../assets/icons/close.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    filter: invert(1);
+    cursor: pointer;
+    z-index: 40;
+    /* background: red; */
+    background-size: 100%;
     }
-
 }
