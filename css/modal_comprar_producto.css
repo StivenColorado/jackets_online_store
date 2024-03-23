@@ -130,3 +130,20 @@
     justify-content: center;
     align-items: center;
 }
+
+@media (max-width:750px) {
+    .contenedor_imagenes_producto {
+        width: 80%;
+        object-fit: contain;
+        background-size: 100%;
+    }
+    .modal_comprar_producto{
+        flex-direction: column;
+    }
+    .contenedor_informacion_producto {
+        width: 65%;
+    }
+    .formulario_agregar_producto_carrito{
+        height: 30%;
+    }
+}

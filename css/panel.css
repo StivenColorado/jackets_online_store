@@ -1,10 +1,27 @@
-.panel{
+.panel {
     width: 80%;
     min-height: 100vh;
     position: relative;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
     align-content: start;
     margin-top: 5%;
+}
+
+.message {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 30vh; */
+}
+
+.hidden {
+    display: none;
+    height: 0vh;
+}
+.show {
+    display: flex;
+    height: 20vh;
 }
