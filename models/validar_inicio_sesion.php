@@ -13,7 +13,7 @@ if ($data) {
         $response["mensaje"] = "Error de conexión a la base de datos";
     } else {
         // Verificar si el correo existe en la base de datos
-        $sql_verificar = "SELECT contrasena_usuario FROM usuario WHERE correo_usuario = ?";
+        $sql_verificar = "SELECT contrasena_usuario,codigo_rol,nombre_usuario FROM usuario WHERE correo_usuario = ?";
         $stmt_verificar = $conn->prepare($sql_verificar);
         $stmt_verificar->bind_param("s", $email);
         $stmt_verificar->execute();
@@ -27,10 +27,11 @@ if ($data) {
                 // La contraseña es válida
 
                 $response["mensaje"] = "Contraseña correcta. Puedes proceder.";
+                $response["usuario"] = $row_verificar;
                 // Iniciar sesión
 
                 // Consultar el ID del correo
-                $sql_id = "SELECT id_usuario FROM usuario WHERE correo_usuario = ?";
+                $sql_id = "SELECT * FROM usuario WHERE correo_usuario = ?";
                 $stmt_id = $conn->prepare($sql_id);
                 $stmt_id->bind_param("s", $email);
                 $stmt_id->execute();
@@ -39,6 +40,7 @@ if ($data) {
                 if ($row_id) {
                     $idUsuario = $row_id['id_usuario'];
                     $response["id_usuario"] = $idUsuario;
+
                     // Guardar el ID en una variable si se encuentra
                     $idUsuarioEncontrado = $idUsuario;
                     // Configurar el tiempo de vida de la sesión en 30 minutos (1800 segundos)

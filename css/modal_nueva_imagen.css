@@ -1,20 +1,21 @@
 /*aqui se abre el modal para cambiar/actualizar la imagen del perfil*/
-.contenedor_formulario_nueva_imagen{
+.contenedor_formulario_nueva_imagen {
     position: fixed;
-    width:100%;
+    width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column  ;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.623);
     z-index: 18;
     font-family: 'caveat';
     display: none;
 }
-.close_contenedor_formulario_nueva_imagen{
+
+.close_contenedor_formulario_nueva_imagen {
     position: absolute;
-    right: 59.5%;
+    right: 20%;
     top: 5%;
     width: 5%;
     height: 8%;
@@ -25,33 +26,36 @@
     z-index: 22;
     cursor: pointer;
 }
-.contenedor_formulario_nueva_imagen > input{
+
+.contenedor_formulario_nueva_imagen>input {
     width: 20%;
     height: 80%;
     background-color: pink;
 }
+
 .contenedor-boton-subir {
-    width: 20%;
+    width: 60vw;
     height: 90%;
     position: relative;
-    left: -20%;
+    /* left: -20%; */
     overflow: hidden;
     display: inline-block;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     background-color: white;
     flex-direction: column;
     border-radius: .4rem;
 }
+
 .boton-subir {
-   width: 61%;
-   height: 8%;
-   background-color: pink;
-   border: none;
-   border-radius: .4rem;
-   font-family: 'caveat';
-   font-size: 1.5em;
+    width: 61%;
+    height: 8%;
+    background-color: pink;
+    border: none;
+    border-radius: .4rem;
+    font-family: 'caveat';
+    font-size: 1.5em;
 }
 
 .contenedor-boton-subir input[type=file] {
@@ -60,8 +64,8 @@
     border-radius: 8px;
     font-size: 16px;
     font-weight: bold;
-    width: 90%;
-    height: 50%;
+    width: 36%;
+    height: 34%;
     clip-path: circle();
     cursor: pointer;
     background-position: center;
@@ -71,6 +75,81 @@
     font-size: 0;
 }
 
+.contenedor-boton-subir input[type=file]::after {
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 35%;
+    background-color: rgba(128, 128, 128, 0.497);
+    background-image: url('../assets/icons/camera.svg');
+    background-size: 30%; /* Ajustar el tamaño del icono */
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 40;
+}
+
 .contenedor-boton-subir .imagen-archivo {
     cursor: pointer;
+}
+
+@media (max-width:1070px) {
+    .contenedor-boton-subir{
+        width: 80vw;
+    }
+    .close_contenedor_formulario_nueva_imagen{
+        right: 10%;
+    }
+}
+
+@media (max-width:830px) {
+    .contenedor-boton-subir input[type=file]{
+        height: 29%;
+    }
+}
+
+@media (max-width:700px) {
+    .contenedor-boton-subir input[type=file]{
+        width: 46%;
+        height: 35%;
+    }
+    .contenedor-boton-subir input[type=file]::after{
+        width: 42%;
+    }
+}
+
+@media (max-width:660px) {
+    .contenedor-boton-subir input[type=file]{
+        width: 53%;
+    }
+    .contenedor-boton-subir input[type=file]::after{
+        width: 48%;
+    }
+}
+@media (max-width:550px){
+    .contenedor-boton-subir{
+        width: 100vw;
+    }
+    .close_contenedor_formulario_nueva_imagen{
+        background-size: 100%;
+        right: 2%;
+    }
+} 
+
+@media (max-width:400px){
+    .contenedor-boton-subir input[type=file]::after{
+        width: 61%;
+    }
+    .contenedor-boton-subir input[type=file]{
+        width: 70%;
+    }
+}
+
+
+@media (max-width:320px){
+    .contenedor-boton-subir input[type=file]::after{
+        width: 74%;
+    }
+    .contenedor-boton-subir input[type=file]{
+        width: 84%;
+    }
 }
