@@ -1,4 +1,4 @@
-#Jackets E-commerce Simulation
+##Jackets E-commerce Simulation
 ![image](https://github.com/StivenColorado/jackets_online_store/assets/90488682/42044ece-26f5-4834-b211-dbcb5bfb4df7)
 
 Welcome to the repository of the simulation of an e-commerce platform focused on the sale of jackets.
