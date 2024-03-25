@@ -1,3 +1,6 @@
+if (localStorage.getItem("user")) {
+    window.location = '../index.html';
+}
 document.querySelector('.login').addEventListener('submit', function (event) {
     event.preventDefault(); // Evita el envío del formulario
     // Información de registro
@@ -35,8 +38,10 @@ document.querySelector('.login').addEventListener('submit', function (event) {
         .then(data => {
             console.log(data.mensaje); // Acceder al mensaje de los datos de respuesta
             alert(data.mensaje); // Mostrar el mensaje en una alerta
-            if(data.mensaje == "Contraseña correcta. Puedes proceder."){
-                location.href = "../index.html"
+            console.log(data.usuario)
+            localStorage.setItem("user", data.usuario)
+            if (data.mensaje == "Contraseña correcta. Puedes proceder.") {
+                // location.href = "../index.html"
             }
         })
         .catch(error => {

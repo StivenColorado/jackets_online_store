@@ -1,3 +1,6 @@
+if (localStorage.getItem("user")) {
+    window.location = '../index.html';
+}
 document.getElementById('register').addEventListener('submit', function (event) {
     event.preventDefault(); // Evita el envío del formulario
     // Información de registro
