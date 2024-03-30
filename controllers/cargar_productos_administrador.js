@@ -1,3 +1,38 @@
+let respuesta; 
+// Obtener el elemento del input de búsqueda
+const inputBuscar = document.querySelector('.texto_buscar_producto_administrador');
+
+// Agregar un evento input al input de búsqueda
+inputBuscar.addEventListener('input', function(event) {
+    const textoBusqueda = event.target.value.trim().toLowerCase(); // Obtener el texto de búsqueda
+
+    // Filtrar los productos basados en el texto de búsqueda
+    const productosFiltrados = respuesta.filter(producto => {
+        return producto.nombre_saco.toLowerCase().includes(textoBusqueda);
+    });
+
+    // Limpiar el contenedor de productos
+    contenedor_productos.innerHTML = '';
+
+    // Verificar si se encontraron resultados
+    if (productosFiltrados.length > 0) {
+        // Mostrar los productos filtrados
+        productosFiltrados.forEach(producto => {
+            crearSeccion(producto.imagenes[0], producto.nombre_saco, formatNumberWithDots(producto.precio_saco), producto.codigo_saco);
+        });
+    } else {
+        // Mostrar un mensaje de "No se encontraron resultados"
+        const mensajeNoResultados = document.createElement('div');
+        mensajeNoResultados.style.width = "100%"
+        mensajeNoResultados.style.textAlign = "center"
+
+        mensajeNoResultados.textContent = 'No products were found matching your search.';
+        contenedor_productos.appendChild(mensajeNoResultados);
+    }
+});
+
+
+
 // Obtener los elementos del DOM para agregar la información
 const contenedor_productos = document.querySelector('.panel_administrar_productos');
 
@@ -20,17 +55,17 @@ const crearSeccion = (imagen, nombre, precio, id) => {
   contenedor_botones_administrador.className = 'contenedor_botones_administrador';
   contenedor_botones_administrador.textContent = '$ ' +formatNumberWithDots(precio);
 
-  let btn_admin = document.createElement('div');
-  btn_admin.className = 'btn_admin';
-  btn_admin.classList.add('editar');
-  btn_admin.setAttribute('data-id', id);
+  // let btn_admin = document.createElement('div');
+  // btn_admin.className = 'btn_admin';
+  // btn_admin.classList.add('editar');
+  // btn_admin.setAttribute('data-id', id);
 
   let btn_admin2 = document.createElement('div');
   btn_admin2.className = 'btn_admin';
   btn_admin2.classList.add('eliminar');
   btn_admin2.setAttribute('data-id', id);
 
-  contenedor_botones_administrador.appendChild(btn_admin);
+  // contenedor_botones_administrador.appendChild(btn_admin);
   contenedor_botones_administrador.appendChild(btn_admin2);
 
   seccion_producto.appendChild(imagen_seccion_producto);
@@ -53,6 +88,7 @@ fetch('./models/cargar_productos_administrador.php')
   })
   .then(data => {
     // Verificar si data es un array
+    respuesta = data
     if (Array.isArray(data)) {
       data.forEach(producto => {
         const codigoSaco = producto.codigo_saco;

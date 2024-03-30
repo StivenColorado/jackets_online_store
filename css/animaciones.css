@@ -49,26 +49,29 @@
 @keyframes show_modal_add_cart {
     from {
         top: 8%;
+        display: none;
         opacity: 0;
-        z-index: -1;
     }
-
+    
     to {
         top: 0%;
+        display: flex;
+        z-index: 20;
         opacity: 1;
-        z-index: 2;
     }
 }
 @keyframes hidden_modal_add_cart {
     from {
         top: 0%;
         opacity: 1;
-        z-index: 2;
+        z-index: 20;
+        display: flex;
     }
     to {
         top: 8%;
         opacity: 0;
         z-index: -1;
+        display: none;
     }
 }
 
@@ -78,10 +81,12 @@
         top: 5%;
         opacity: 0;
         z-index: -1;
+        display: hidden;
     }
 
     to {
         top: 0%;
+        display: flex;
         opacity: 1;
         z-index: 20;
     }

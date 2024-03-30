@@ -47,7 +47,11 @@
     flex-direction: column;
     border-radius: .4rem;
 }
-
+.contenedor-boton-subir > h1{
+    font-size: 2em;
+    font-weight: bold;
+    color: rgb(32, 32, 32);
+}
 .boton-subir {
     width: 61%;
     height: 8%;

@@ -46,9 +46,9 @@
       <div class="contenedor_editar_perfil">
 
         <div class="texto_editar_perfil">
+          <i class="icon_edit"></i>
           Edit profile
         </div>
-        <i class="icon_edit"></i>
       </div>
       <!-- <div class="contenedor_pedidos">
         <div class="texto_pedidos">
@@ -170,7 +170,7 @@
 
   <div class="modal_administrar_productos">
     <header class="cabecera_buscar_productos">
-      <form class="buscar_producto_administrador">
+      <form class="buscar_producto_administrador" method="dialog">
         <input type="text" name="texto_buscar_producto_administrador" placeholder="search any product"
           class="texto_buscar_producto_administrador">
         <button class="btn_buscar_producto_administrador">
@@ -194,25 +194,37 @@
   </div>
 
   <form class="formulario_agregar_producto" enctype="multipart/form-data">
-    <div class="btn_cerrar_formulario_agregar_producto">X</div>
-    <label for="nombre_saco">Nombre del saco:</label>
-    <input type="text" id="nombre_saco" name="nombre_saco" required>
+    <p>Add new product</p>
+    <div class="sub_container_form_add_product">
+      <div class="btn_cerrar_formulario_agregar_producto">X</div>
 
-    <label for="descripcion_saco">Descripción del saco:</label>
-    <textarea id="descripcion_saco" name="descripcion_saco" required></textarea>
+      <div class="group_form_add_product">
+        <label for="nombre_saco">Nombre del saco:</label>
+        <input type="text" id="nombre_saco" name="nombre_saco" required>
+      </div>
 
-    <label for="precio_saco">Precio del saco:</label>
-    <input type="number" id="precio_saco" name="precio_saco" required>
+      <div class="group_form_add_product">
+        <label for="descripcion_saco">Descripción del saco:</label>
+        <textarea id="descripcion_saco" name="descripcion_saco" required></textarea>
+      </div>
+      <div class="group_form_add_product">
+        <label for="precio_saco">Precio del saco:</label>
+        <input type="number" id="precio_saco" name="precio_saco" required>
+      </div>
+      <div class="group_form_add_product">
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" name="cantidad" required>
+      </div>
 
-    <label for="cantidad">Cantidad:</label>
-    <input type="number" id="cantidad" name="cantidad" required>
-
-    <label for="imagenes">Imágenes (mínimo 1, máximo 3):</label>
-    <!--  <input  type="file" id="imagenes" name="imagenes[]" accept="image/*" multiple required> -->
-    <input class="styled-file-input" type="file" id="imagenes" name="imagenes[]" multiple>
-    <div id="previsualizacion"></div>
-
-    <input type="submit" value="Agregar Producto">
+      <div class="group_form_add_product">
+        <label for="imagenes">Imágenes (mínimo 1, máximo 3):</label>
+        <input class="styled-file-input" type="file" id="imagenes" name="imagenes[]" multiple>
+      </div>
+      <div id="previsualizacion"></div>
+      <div class="group_form_add_product">
+        <input type="submit" class="btn_add_new_product_" value="Agregar Producto">
+      </div>
+    </div>
   </form>
 
   <div class="modal_carrito">
