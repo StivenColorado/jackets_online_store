@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     contenedor_padre.addEventListener('click', (event) => {
         const target = event.target;
 
-        if (target.classList.contains('texto_administrar_productos')) {
+        if (target.closest('.texto_administrar_productos')) {
+            // Realizar acciones cuando se hace clic en el elemento con la clase 'texto_administrar_productos'
             modal_productos.style.animation = "show_modal_productos .3s alternate ease-in forwards";
         }
     });

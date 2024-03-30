@@ -41,7 +41,7 @@ document.querySelector('.login').addEventListener('submit', function (event) {
             console.log(data.usuario)
             localStorage.setItem("user", data.usuario)
             if (data.mensaje == "Contraseña correcta. Puedes proceder.") {
-                // location.href = "../index.html"
+                location.href = "../index.html"
             }
         })
         .catch(error => {
