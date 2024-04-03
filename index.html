@@ -25,6 +25,7 @@
   <script src="./controllers/validar_sesion.js"></script>
   <script src="./controllers/cargar_productos_usuarios.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
   <script src="./js/config.json" id="config" type="application/json"></script>
@@ -48,6 +49,12 @@
         <div class="texto_editar_perfil">
           <i class="icon_edit"></i>
           Edit profile
+        </div>
+      </div>
+      <div class="contenedor_cerrar_sesion">
+        <div class="texto_editar_perfil" id="btn_cerrar_sesion_">
+          <i class="icon_singOff"></i>
+          Sing Off
         </div>
       </div>
       <!-- <div class="contenedor_pedidos">
@@ -280,10 +287,10 @@
       jacket
     </span>
     <ul>
-      <!-- <li class="options option_active">HOME</li> -->
-      <!-- <li class="options">SHOP</li>
-      <li class="options">POPULAR</li>
-      <li class="options">CATEGORIES</li> -->
+      <li class="options option_active">HOME</li> 
+      <li class="options">Sing Up</li>
+      <li class="options">Sing In</li>
+      <!-- <li class="options">CATEGORIES</li> -->
     </ul>
     <div class="container-button">
       <button class="trolley"></button>
@@ -410,7 +417,7 @@
 
 
   <footer>
-    <p>© 2023, jacketStore@gmail.com </p>
+    <p>© 2024, jacketStore@gmail.com </p>
   </footer>
   <script src="./js/slider.js"></script>
   <script src="./js/open_modal_new_image.js"></script>
@@ -420,6 +427,7 @@
   <script src="./js/agregar_imagenes_formulario.js"></script>
   <script src="./js/open_modal_add_product.js"></script>
   <script src="./js/open_modal_carrito.js "></script>
+  <script src="./js/redireccionar_index.js "></script>
 
   <script src="./controllers/cerrar_sesion.js"></script>
   <script src="./controllers/cargar_perfil.js"></script>

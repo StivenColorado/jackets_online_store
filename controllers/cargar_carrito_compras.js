@@ -2,7 +2,6 @@ let text_price = document.querySelector('.total_carrito > p');
 const text_cart = document.querySelector('.header_modal_carrito > h1');
 const trolleyElement = document.querySelector('.trolley');
 
-// Función para cargar los productos del carrito mediante AJAX
 function cargarProductosCarrito() {
   fetch('./models/cargar_carrito_compras.php', {
     method: 'GET',
@@ -10,10 +9,6 @@ function cargarProductosCarrito() {
   })
     .then(response => response.json())
     .then(data => {
-      // Aquí recibes los datos de la consulta en formato JSON
-      // data contendrá la información del carrito en el formato esperado
-      // Por ejemplo, data podría ser un array de objetos con información de cada producto en el carrito
-
       // Vaciando la tabla antes de agregar los nuevos productos
       const tbody = document.querySelector('.contenedor_productos_carritos tbody');
       tbody.innerHTML = '';

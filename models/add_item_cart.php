@@ -21,12 +21,6 @@ if ($row_check_carrito_saco['total'] > 0) {
     // El producto ya está en el carrito
     $response = array("existeEnCarrito" => true);
 } else {
-    // El producto no está en el carrito, puedes realizar acciones adicionales si es necesario
-    // Por ejemplo, insertar el producto en la tabla carrito_saco
-
-    // Obtener la conexión a la base de datos (si no se ha incluido anteriormente)
-    // require_once 'conexion.php';
-
     // Obtener el id_carrito del usuario en la tabla carrito_compras
     session_start();
     $idUsuario = $_SESSION['id_user'];
