@@ -40,7 +40,8 @@
 .grilla_carrito {
     width: 90%;
     min-height: 80vh;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     /* overflow: hidden; */
     overflow-y: auto;
     /* Estilos del scroll */
@@ -102,7 +103,7 @@ tr {
 
 .imagen_producto_carrito {
     width: 35%;
-    background-color: red;
+    /* background-color: red; */
     object-fit: contain;
 }
 

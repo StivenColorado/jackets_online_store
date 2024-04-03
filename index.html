@@ -25,6 +25,7 @@
   <script src="./controllers/validar_sesion.js"></script>
   <script src="./controllers/cargar_productos_usuarios.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
   <script src="./js/config.json" id="config" type="application/json"></script>
@@ -38,15 +39,23 @@
     </div>
     <div class="contenedor_perfil">
       <div class="contenedor_imagen_perfil "></div>
-      <div class="contenedor_nombre_perfil" id="contenedor_nombre_perfil">
+      <div class="container_text_profile">
+        <div class="contenedor_nombre_perfil" id="contenedor_nombre_perfil">
+        </div>
+        <small class="text_rol"></small>
       </div>
-      <small class="text_rol"></small>
       <div class="contenedor_editar_perfil">
 
         <div class="texto_editar_perfil">
+          <i class="icon_edit"></i>
           Edit profile
         </div>
-        <i class="icon_edit"></i>
+      </div>
+      <div class="contenedor_cerrar_sesion">
+        <div class="texto_editar_perfil" id="btn_cerrar_sesion_">
+          <i class="icon_singOff"></i>
+          Sing Off
+        </div>
       </div>
       <!-- <div class="contenedor_pedidos">
         <div class="texto_pedidos">
@@ -168,7 +177,7 @@
 
   <div class="modal_administrar_productos">
     <header class="cabecera_buscar_productos">
-      <form class="buscar_producto_administrador">
+      <form class="buscar_producto_administrador" method="dialog">
         <input type="text" name="texto_buscar_producto_administrador" placeholder="search any product"
           class="texto_buscar_producto_administrador">
         <button class="btn_buscar_producto_administrador">
@@ -192,25 +201,37 @@
   </div>
 
   <form class="formulario_agregar_producto" enctype="multipart/form-data">
-    <div class="btn_cerrar_formulario_agregar_producto">X</div>
-    <label for="nombre_saco">Nombre del saco:</label>
-    <input type="text" id="nombre_saco" name="nombre_saco" required>
+    <p>Add new product</p>
+    <div class="sub_container_form_add_product">
+      <div class="btn_cerrar_formulario_agregar_producto">X</div>
 
-    <label for="descripcion_saco">Descripción del saco:</label>
-    <textarea id="descripcion_saco" name="descripcion_saco" required></textarea>
+      <div class="group_form_add_product">
+        <label for="nombre_saco">Nombre del saco:</label>
+        <input type="text" id="nombre_saco" name="nombre_saco" required>
+      </div>
 
-    <label for="precio_saco">Precio del saco:</label>
-    <input type="number" id="precio_saco" name="precio_saco" required>
+      <div class="group_form_add_product">
+        <label for="descripcion_saco">Descripción del saco:</label>
+        <textarea id="descripcion_saco" name="descripcion_saco" required></textarea>
+      </div>
+      <div class="group_form_add_product">
+        <label for="precio_saco">Precio del saco:</label>
+        <input type="number" id="precio_saco" name="precio_saco" required>
+      </div>
+      <div class="group_form_add_product">
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" name="cantidad" required>
+      </div>
 
-    <label for="cantidad">Cantidad:</label>
-    <input type="number" id="cantidad" name="cantidad" required>
-
-    <label for="imagenes">Imágenes (mínimo 1, máximo 3):</label>
-    <!--  <input  type="file" id="imagenes" name="imagenes[]" accept="image/*" multiple required> -->
-    <input class="styled-file-input" type="file" id="imagenes" name="imagenes[]" multiple>
-    <div id="previsualizacion"></div>
-
-    <input type="submit" value="Agregar Producto">
+      <div class="group_form_add_product">
+        <label for="imagenes">Imágenes (mínimo 1, máximo 3):</label>
+        <input class="styled-file-input" type="file" id="imagenes" name="imagenes[]" multiple>
+      </div>
+      <div id="previsualizacion"></div>
+      <div class="group_form_add_product">
+        <input type="submit" class="btn_add_new_product_" value="Agregar Producto">
+      </div>
+    </div>
   </form>
 
   <div class="modal_carrito">
@@ -266,10 +287,10 @@
       jacket
     </span>
     <ul>
-      <!-- <li class="options option_active">HOME</li> -->
-      <!-- <li class="options">SHOP</li>
-      <li class="options">POPULAR</li>
-      <li class="options">CATEGORIES</li> -->
+      <li class="options option_active">HOME</li> 
+      <li class="options">Sing Up</li>
+      <li class="options">Sing In</li>
+      <!-- <li class="options">CATEGORIES</li> -->
     </ul>
     <div class="container-button">
       <button class="trolley"></button>
@@ -386,7 +407,8 @@
 
           </div>
           <button type="submit"
-            class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">register jacket</button>
+            class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">register
+            jacket</button>
         </form>
 
       </div>
@@ -395,7 +417,7 @@
 
 
   <footer>
-    <p>© 2023, jacketStore@gmail.com </p>
+    <p>© 2024, jacketStore@gmail.com </p>
   </footer>
   <script src="./js/slider.js"></script>
   <script src="./js/open_modal_new_image.js"></script>
@@ -405,6 +427,7 @@
   <script src="./js/agregar_imagenes_formulario.js"></script>
   <script src="./js/open_modal_add_product.js"></script>
   <script src="./js/open_modal_carrito.js "></script>
+  <script src="./js/redireccionar_index.js "></script>
 
   <script src="./controllers/cerrar_sesion.js"></script>
   <script src="./controllers/cargar_perfil.js"></script>

@@ -33,6 +33,8 @@ window.onload = function () {
       // console.log(id)
       // console.log(btn_addt_item_cart)
       modal_add_to_cart.style.animation = "show_modal_add_cart .2s alternate ease-in forwards";
+      modal_add_to_cart.style.display = "flex";
+      modal_add_to_cart.style.zIndex = "20";
     }
   })
 

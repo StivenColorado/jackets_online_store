@@ -4,15 +4,16 @@
     z-index: -1;
     width: 100%;
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.952);
+    background-color: white;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     opacity: 0;
-/*
+    /*
     animation: show_modal_productos 1s alternate ease-in forwards;
-*/}
+*/
+}
 
 .cabecera_buscar_productos {
     width: 100%;
@@ -24,17 +25,18 @@
 }
 
 .buscar_producto_administrador {
-    width: 40%;
+    width: 50%;
     height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding-left: 6em;
 }
 
 .texto_buscar_producto_administrador {
-    width: 40%;
-    height: 60%;
+    width: 70%;
+    height: 72%;
     border: solid 1px gray;
     border-radius: .4rem 0 0 .4rem;
     outline: none;
@@ -43,7 +45,7 @@
 
 .btn_buscar_producto_administrador {
     width: 10%;
-    height: 61%;
+    height: 72%;
     border: solid 1px gray;
     border-radius: 0 .4rem .4rem 0;
     outline: none;
@@ -67,7 +69,7 @@
 
 .sub_navegacion_adminstrar_productos {
     width: 100%;
-    height: 8%;
+    height: 12%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -99,18 +101,38 @@
 }
 
 .panel_administrar_productos {
-    width: 80%;
+    width: auto;
+    min-width: 80vw;
     min-height: 80vh;
-    overflow-y: auto;
-    box-shadow: 1px 5px 5px 5px rgba(0, 0, 0, 0.548);
-    display: inline-block;
+    overflow: auto;
+    /* box-shadow: 1px 5px 5px 5px rgba(0, 0, 0, 0.548); */
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    gap: 1em;
 }
+/* estilos de la barra de scroll */
+.panel_administrar_productos::-webkit-scrollbar {
+    width: 10px; 
+}
+
+.panel_administrar_productos::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); 
+    border-radius: 5px;
+}
+
+.panel_administrar_productos::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.5); 
+}
+
+
 
 
 .seccion_producto {
     position: relative;
     margin-top: 2%;
-    width: 90%;
+    min-width: 70vw;
     left: 5%;
     min-height: 20%;
     display: flex;
@@ -145,12 +167,88 @@
     border-radius: .2rem;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 50%;
+    background-size: 40%;
     cursor: pointer;
 }
-.editar{
+
+.editar {
     background-image: url('../assets/icons/icon_edit.png');
 }
-.eliminar{
+
+.eliminar {
     background-image: url('../assets/icons/icon_delete.png');
+}
+
+@media (max-width:1090px) {
+    .btn_add_new_product {
+        width: 20%;
+    }
+
+    .buscar_producto_administrador {
+        width: 56%;
+        padding-left: 3em;
+    }
+}
+
+@media (max-width:820px) {
+    .btn_add_new_product {
+        width: 30%;
+    }
+
+    .buscar_producto_administrador {
+        width: 78%;
+    }
+
+    .seccion_producto {
+        width: 800px;
+    }
+
+    .panel_administrar_productos {
+        min-width: none;
+        max-width: 110vw;
+        overflow: auto;
+    }
+}
+
+
+@media (max-width:900px) {
+    .btn_cerrar_modal_administrar_productos {
+        align-items: start;
+        font-size: 2em;
+    }
+}
+
+@media (max-width:820px) {
+
+    .btn_add_new_product {
+        width: 45%;
+    }
+}
+
+@media (max-width:580px) {
+    .btn_cerrar_modal_administrar_productos {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width:480px) {
+    .texto_buscar_producto_administrador{
+        width: 80%;
+    }
+    .btn_buscar_producto_administrador{
+        width: 20%;
+    }
+    .buscar_producto_administrador{
+        width: 85%;
+    }
+    .buscar_producto_administrador{
+        height: 88%;
+    }
+    .btn_add_new_product{
+        width: 100%;
+        left: 0;
+    }
+    .icon_add_new_product{
+        background-size: 25%;
+    }
 }

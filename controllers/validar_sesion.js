@@ -1,14 +1,11 @@
 // valida_sesion.js
 function verificarSesion() {
-  // Realiza una solicitud AJAX para verificar la existencia de la sesión
   // Puedes ajustar la URL de acuerdo a tu configuración
   fetch('./models/validar_sesion.php')
     .then(respuesta => respuesta.json())
     .then(data => {
       if (data.sesion_activa) {
         // La sesión existe
-        //console.log('Sesión activa. Usuario autenticado.');
-        //console.log(data.sesion)
         const container_button = document.querySelector('.container-button')
         const btn_cerrar = document.querySelector('#btn_cerrar_menu_configuraciones')
 
@@ -16,7 +13,6 @@ function verificarSesion() {
         btn_profile.className = "profile"
         container_button.appendChild(btn_profile)
         btn_profile.dataset.id = data.sesion//se obtiene el identificador el archivo php
-        // Realiza las acciones necesarias para usuarios autenticados
         btn_profile.addEventListener('click', () => {
           abrirMenu(btn_profile)
         })
@@ -26,6 +22,7 @@ function verificarSesion() {
       } else {
         // No hay sesión activa
         console.log('No hay sesión activa. Usuario no autenticado.');
+        localStorage.clear()
         // Realiza las acciones necesarias para usuarios no autenticados
       }
     })
